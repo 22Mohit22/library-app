@@ -7,7 +7,7 @@
 
 button{
     padding: 10px;
-    min-width: 120px;
+    min-width: 125px;
     width: auto;
     height: 40px;
     font-size: 20px;
@@ -20,6 +20,15 @@ button{
 }
 button:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+button:focus{
+    outline: none;
+}
+button:active{
+    transform: scale(0.95);
+}
+input:focus{
+    outline: none;
 }
 
 .lib-app{
@@ -91,7 +100,10 @@ main{
 }
 
 .book-card{
-    background-color: blue;
+    background-image: url('./book-bg.png');
+    background-position: center;
+    background-size: 105%;
+    background-repeat: no-repeat;
     margin: 25px;
     width: 250px;
     height: 360px;
@@ -102,7 +114,6 @@ main{
 }
 
 .name-container{
-    background-color: green;
     grid-column-start: 1;
     grid-column-end: 1;
     display: flex;
@@ -113,11 +124,15 @@ main{
     border-top-right-radius: 10px;
 }
 .name-container>h3{
-    margin: 20px 10px;
+    margin: 50px 10px;
+    font-size: 30px;
+    color: white;
     align-self: flex-start;
+    text-shadow:  0 0 3px rgba(65, 33, 3, 0.4);
 }
 .author{
     margin: 10px;
+    color: white;
     align-self: flex-end;
     font-weight: 600;
 }
@@ -132,16 +147,98 @@ main{
     margin: 10px 5px;
 }
 .mark-read{
-    font-size: 15px;
-    font-weight: 100;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.del-btn{
+    font-size: 14px;
+    min-width: 40px;
+    font-weight: bold;
 }
 
-.info,.del-btn{
-    min-width: 20px;
-    padding: 0;
-    background-color: transparent;
+
+
+/*form styles*/
+
+dialog{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 20px;
+    position: absolute;
+    top: 100px;
+    left: 600px;
 }
-.info:hover,.del-btn:hover{
+
+#close-btn{
+    margin-right: 5px;
+    padding: 0;
+    position: absolute;
+    min-width: 30px;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+}
+#close-btn:hover{
     box-shadow: none;
     transform: scale(1.1);
+}
+#close-btn:active{
+    transform: scale(0.95);
+}
+
+
+dialog>form{
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputs{
+    margin: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputs>input{
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: flex-end;
+}
+.inputs>label{
+    font-size: 20px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+.checkbox-container{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+.checkbox-container>label{
+    font-size: 20px;
+    font-style: italic;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#book-read{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+form>button{
+    margin-bottom: 10px;
+    width: 300px;
+    font-weight: bolder;
 }
