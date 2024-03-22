@@ -115,6 +115,10 @@ submitBtn.addEventListener('click', (e) => {
     && authorEl.value.trim() != '' 
     && pagesEl.value.trim() != '') {
         appendBookToDisplay();
+        titleEl.value = '';
+        authorEl.value = '';
+        pagesEl.value = '';
+        checkboxEl.checked = false;
         dialog.close()
     } else {
         console.log('please fill all the required elements');
